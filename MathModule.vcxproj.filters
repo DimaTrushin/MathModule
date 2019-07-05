@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Library">
+      <UniqueIdentifier>{f6284195-dbe3-4dec-a673-3dd5f6b93edf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimdDetector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vectorclass\instrset_detect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintInt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintIntAVX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintIntSSE2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MathModule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Library\ElementList.h">
+      <Filter>Header Files\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\NullType.h">
+      <Filter>Header Files\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\TypeList.h">
+      <Filter>Header Files\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Selector.h">
+      <Filter>Header Files\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="SimdDetector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionLevels.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\FunctionHelper.h">
+      <Filter>Header Files\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\FunctionModuleBase.h">
+      <Filter>Header Files\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="PrintInt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
