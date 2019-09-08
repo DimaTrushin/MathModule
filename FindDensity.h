@@ -8,10 +8,10 @@
 
 template<typename T>
 void find_density_template(
-  const std::vector<T> &arg,
-  const std::vector<T> &mean,
-  const std::vector<T> &dev,
-  std::vector<T> &results,
+  const std::vector<double> &arg,
+  const std::vector<double> &mean,
+  const std::vector<double> &dev,
+  std::vector<double> &results,
   int shift
 ) {
   for (size_t i = 0; i < arg.size(); i += shift) {
