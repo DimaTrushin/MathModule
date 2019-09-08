@@ -11,11 +11,17 @@ FindDensity::FindDensity(int instruction_level)
 }
 
 
-void FindDensity::find_density(const std::vector<double> &input, std::vector<double> &output) {
-  for (size_t i = 0; i != output.size(); ++i) {
-    output[i] = 0;
-    for (size_t j = 0; j != input.size(); ++j) {
-      output[i] += input[j];
+void FindDensity::find_density(
+  const std::vector<double> &arg,
+  const std::vector<double> &mean,
+  const std::vector<double> &dev,
+  std::vector<double> &results
+  ) {
+  for (size_t i = 0; i != arg.size(); ++i) {
+    results[i] = 0;
+    for (size_t j = 0; j != mean.size(); ++j) {
+      results[i] += find_derivative_2<double>(arg[i], mean[j], dev[j]);
     }
+    results /= static_cast<double>(mean.size());
   }
 }
