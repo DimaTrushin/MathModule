@@ -45,3 +45,10 @@ static inline T find_density_2(T &x, T &mean, T &deviation) {
 }
 
 
+template<typename T>
+constexpr bool is_vector_class =
+        std::is_same<std::decay<T>, Vec4f>::value
+        || std::is_same<std::decay<T>, Vec2d>::value
+        || std::is_same<std::decay<T>, Vec8f>::value
+        || std::is_same<std::decay<T>, Vec4d>::value
+        ;
