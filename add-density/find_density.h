@@ -8,7 +8,7 @@
 
 
 template<typename T>
-static inline T find_density_0(T &x, T &mean, T &deviation) {
+static inline T find_derivative_0(T &x, T &mean, T &deviation) {
     T one_over_div = 1. / deviation;
     T arg_minus_mean = x - mean;
 
@@ -19,7 +19,7 @@ static inline T find_density_0(T &x, T &mean, T &deviation) {
 
 
 template<typename T>
-static inline T find_density_1(T &x, T &mean, T &deviation) {
+static inline T find_derivative_1(T &x, T &mean, T &deviation) {
     T one_over_div = 1. / deviation;
     T arg_minus_mean = x - mean;
 
@@ -32,7 +32,7 @@ static inline T find_density_1(T &x, T &mean, T &deviation) {
 
 
 template<typename T>
-static inline T find_density_2(T &x, T &mean, T &deviation) {
+static inline T find_derivative_2(T &x, T &mean, T &deviation) {
     T one_over_div = 1. / deviation;
     T arg_minus_mean = x - mean;
 
