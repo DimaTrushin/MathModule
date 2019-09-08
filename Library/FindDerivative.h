@@ -5,10 +5,6 @@
 #pragma once
 
 #include <math.h>
-#include "vectorclass/vectormath_exp.h"
-#include "vectorclass/vectorclass.h"
-
-#define VCL_FASTEXP
 #define M_PI 3.14159265358979323846264338327950288
 #define one_over_sqrt_two_pi 0.398942280401432702863218082712
 

@@ -1,7 +1,8 @@
 #pragma once
+#define VCL_FASTEXP
 
 #include <vector>
-#include "Library\FunctionModuleBase.h"
+#include "Library/FunctionModuleBase.h"
 #include "InstructionLevels.h"
 #include "Library/FindDerivative.h"
 
