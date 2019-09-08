@@ -8,14 +8,40 @@
 
 
 template<typename T>
-static inline T find_density_0(T &x, T &mean, T &deviation)
+static inline T find_density_0(T &x, T &mean, T &deviation) {
+    T one_over_div = 1. / deviation;
+    T arg_minus_mean = x - mean;
+
+    return exp(-0.5 * arg_minus_mean * arg_minus_mean
+               * one_over_div * one_over_div)
+           * one_over_div * one_over_sqrt_two_pi;
+}
 
 
 template<typename T>
-static inline T find_density_1(T &x, T &mean, T &deviation)
+static inline T find_density_1(T &x, T &mean, T &deviation) {
+    T one_over_div = 1. / deviation;
+    T arg_minus_mean = x - mean;
+
+    return - exp(-0.5 * arg_minus_mean * arg_minus_mean
+                 * one_over_div * one_over_div)
+           * one_over_sqrt_two_pi
+           * one_over_div * one_over_div * one_over_div
+           * arg_minus_mean;
+}
 
 
 template<typename T>
-static inline T find_density_2(T &x, T &mean, T &deviation)
+static inline T find_density_2(T &x, T &mean, T &deviation) {
+    T one_over_div = 1. / deviation;
+    T arg_minus_mean = x - mean;
+
+    return exp(-0.5 * arg_minus_mean * arg_minus_mean
+               * one_over_div * one_over_div)
+           * one_over_sqrt_two_pi
+           * one_over_div * one_over_div * one_over_div
+           * (1. - arg_minus_mean * arg_minus_mean
+                   * one_over_div * one_over_div);
+}
 
 
