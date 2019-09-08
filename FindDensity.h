@@ -18,12 +18,9 @@ public:
   FindDensity(int instruction_level);
 
 private:
-  static void find_densityAVX(const std::vector<double> &input,
-                              std::vector<double> &output);
+  static void find_densityAVX(const std::vector<double> &, std::vector<double> &);
 
-  static void find_densitySSE2(const std::vector<double> &input,
-                               std::vector<double> &output);
+  static void find_densitySSE2(const std::vector<double> &, std::vector<double> &);
 
-  static void find_density(const std::vector<double> &input,
-                           std::vector<double> &output);
+  static void find_density(const std::vector<double> &, std::vector<double> &);
 };
