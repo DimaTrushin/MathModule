@@ -59,7 +59,7 @@ public:
         static TFunArg choose(TFunArg Fun1, TFunArgs... Funs, int level) {
           if (level >= LevelList::Head)
             return Fun1;
-          return SetLevelsT<LevelList::Tail>::choose(Funs..., level);
+          return SetLevelsT<typename LevelList::Tail>::choose(Funs..., level);
         }
       };
 
