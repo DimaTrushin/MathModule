@@ -1,14 +1,8 @@
 #include "PrintInt.h"
-#include "Library\Selector.h"
-#include "InstructionLevels.h"
-
 #include <iostream>
 //--------------------------------------------------------------------------------
 // PrintInt
 //--------------------------------------------------------------------------------
-
-using Selector = NSLibrary::Selector;
-using IL = CInstrLevel;
 
 // We must send function with respect to decreasing of their simd level
 // So, the default non-simd function goes last

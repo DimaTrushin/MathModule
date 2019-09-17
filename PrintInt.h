@@ -14,8 +14,7 @@
 using PrintIntBase =
   NSLibrary::FunctionModuleBase<void(int), CInstrLevel::AVX, CInstrLevel::SSE2>;
 
-class PrintInt :
-  public PrintIntBase {
+class PrintInt : public PrintIntBase {
   using CBase = PrintIntBase;
 public:
   // The only thing we need to provide is the constructor

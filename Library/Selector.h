@@ -59,7 +59,7 @@ public:
         static TFunArg choose(TFunArg Fun1, TFunArgs... Funs, int level) {
           if (level >= LevelList::Head)
             return Fun1;
-          return SetLevelsImpl<LevelList::Tail>::Selector::choose(Funs..., level);
+          return SetLevelsT<LevelList::Tail>::choose(Funs..., level);
         }
       };
 
@@ -74,22 +74,26 @@ public:
       //--------------------------------------------------------------------------------
 
       template<class TSeq>
-      struct SelectorHelper;
+      struct SelectorHelperImpl;
+
+      template<class TSeq>
+      using SelectorHelper = typename SelectorHelperImpl<TSeq>::Result;
 
       template<class... TTypes>
-      struct SelectorHelper<TypeSeq<TTypes...>> {
+      struct SelectorHelperImpl<TypeSeq<TTypes...>> {
         using Result = SelectorImpl<TTypes...>;
       };
       //--------------------------------------------------------------------------------
     public:
-      using Selector = typename SelectorHelper<TL::MakeTypeSeqN<FunctionPtr, EL::Length<LevelList>::value + 1>>::Result;
+      using Selector =
+        SelectorHelper<TL::MakeTypeSeqN<FunctionPtr, EL::Length<LevelList>::value + 1>>;
     };
     //--------------------------------------------------------------------------------
   public:
-    template<int... TInts>
-    using SetLevels = typename SetLevelsImpl<EL::MakeElementList<TInts...>>::Selector;
     template<class TElementList>
     using SetLevelsT = typename SetLevelsImpl<TElementList>::Selector;
+    template<int... TInts>
+    using SetLevels = SetLevelsT<EL::MakeElementList<TInts...>>;
   };
   //--------------------------------------------------------------------------------
 };
